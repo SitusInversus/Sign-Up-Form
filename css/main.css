@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --total-height: 900px;
+    --total-width: 1200px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+.left_side {
+    width: calc(var(--total-width)/3);
+    height: var(--total-height);
+    background-color: blue;
+}
+.right_side {
+    width: calc(var(--total-width)*2/3);
+    height: var(--total-height);
+    background-color: red;
+
+    display:flex;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-basis: auto;
+    margin: auto;
+}
+
+.right_side > * {
+    height: calc(var(--total-height)/3);
+}
+
+.top, .bottom {
+    background-color: whitesmoke;
+}
+
+.middle {
+    background-color: white;
+}
