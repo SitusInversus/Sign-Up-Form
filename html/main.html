@@ -9,12 +9,10 @@
 <body>
     <div class="container">
         <div class="left_side">
-            <p></p>
             <div class="hero_left">
                 <h2>Sign-up Form</h2>
                 <img src="../Pics/odin-lined.png" alt="The Odin Project Logo" id="odin_logo">
             </div>
-            <p class="photo_origin">Photo by Alex Krivec on Unsplash</p>
         </div>
         <div class="right_side">
             <div class="top">
@@ -35,25 +33,29 @@
                     </label>
                     <label for="user_email">
                         Email<span>*</span>
-                        <input type="email" name="input3" id="user_email" required>
+                        <input type="email" name="user_email" id="user_email" required>
                     </label>
-                    <label for="tel">
-                        Telephone<span></span>
+                    <label for="user_phone">
+                        Telephone
                         <input type="tel" name="user_phone" id="user_phone">
                     </label>
-                    <label for="password_first">
+                    <label for="password_first" class="error"> 
                         Password<span>*</span>
                         <input type="password" name="password" id="password_first" required>
                     </label>
-                    <label for="password_second">
+                    <label for="password_second" class="error">
                         Confirm Password<span>*</span>
                         <input type="password" name="password" id="password_second" required>
                     </label>
                 </fieldset>
              </form>
              <div class="bottom">
-                <button type="submit">CREATE ACCOUNT</button>
-                <p>Already have an account? <span>LOG IN</span></p>
+                <div class="button_container">
+                    <button type="submit">CREATE ACCOUNT</button>
+                    <button>LOG IN</button>
+                </div>
+                <!-- <p class="login">Already have an account?  <button>LOG IN</button></p> -->
+                <p class="photo_origin">Photo by Alex Krivec on Unsplash</p>
              </div>
         </div>
     </div>
