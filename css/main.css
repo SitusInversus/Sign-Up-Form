@@ -1,3 +1,14 @@
+@font-face {
+    font-family: pridi;
+    src: url(../fonts/Pridi/Pridi-Regular.ttf);
+    font-weight:normal;
+}
+
+@font-face {
+    font-family: cakeCafe;
+    src: url(../fonts/cakecafe/Cakecafe.ttf);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -24,14 +35,12 @@ body {
 
     width: max(25vw, 60rem);
     min-height: 100vh;
-
-    /* background-image: url(../Pics/ales-krivec-N-aTikX-b00-unsplash.jpeg);
-    background-size: cover;
-    background-position: 30%; */
 }
 
 .hero_left {
     display: flex;
+    font-size: 2rem;
+    font-family: cakeCafe, pridi;
     justify-content: center;
     align-items: center;
     height: max (20vh, 5rem);
@@ -73,7 +82,7 @@ form {
     flex-direction: column;
     background-color: rgba(234, 237, 240, 0.497);
     border-radius: 5px;
-    z-index: 10;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.096);
 }
 legend {
     font-size: 1.2rem;
@@ -87,6 +96,7 @@ form > p {
     margin-left: 0px;
     padding-left: 0px;
     margin-bottom: 0;
+    z-index: 1;
 
 }
 
@@ -98,11 +108,12 @@ fieldset {
     align-content: center;
     flex: 1;
     gap: 2rem;
-
     max-width: 70rem;
     margin-left: 0px;
+    margin-bottom: 1rem;
     padding-left: 0px;
     border: 0;
+    
 }   
 fieldset > span {
     font-size: 0.1rem;
@@ -116,16 +127,30 @@ label {
     max-width: 13rem;
 }
 input {
+    background-color: white;
     appearance: none;
     font-size:  1.1rem;
     border-radius: 5px;
+    border: 2px rgba(0, 0, 0, 0.581) solid;
+    border-top: 2px rgb(0, 0, 0) solid;
+    border-left: 2px rgba(0, 0, 0, 0.881) solid;
+    z-index: 1;
 }
 
-input:focus, input:hover, button:hover {
+input:focus-visible, input:hover, input:focus {
+    outline: 0;
+    font-size:  1.1rem;
+    border-radius: 5px;
     border-color: blue;
-    box-shadow: 10 px 1px 1px 3px black;
-    background-color: white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 15px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+input:user-valid {
+    border-color: 2px solid green;
+}
+
+input:user-invalid {
+    border: red 2px solid;
 }
 
 .bottom {
@@ -145,11 +170,26 @@ input:focus, input:hover, button:hover {
     background-color: white;
     font-size: 1.12rem;
     border-radius: 6px;
+    border: 2px;
     padding: 0.3rem;
+    border: 2px rgba(0, 0, 0, 0.581) solid;
+    border-top: 2px rgb(0, 0, 0) solid;;
+    border-left: 2px rgba(0, 0, 0, 0.881) solid;;
+}
+
+.button_container button:hover{
+    border-color: blue;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 255, 0.272);
+    background-color: white;
 }
 
 .button_container :first-child {
     margin-right: 3.6rem;
+}
+
+.button_container :last-child {
+    margin-bottom: 3rem;
+    margin-right: 9.27rem;
 }
 .photo_origin {
     margin-top: auto;
@@ -157,6 +197,5 @@ input:focus, input:hover, button:hover {
     justify-self: flex-end;
     padding-right: 2rem ;
     color: azure;
-
 }
 

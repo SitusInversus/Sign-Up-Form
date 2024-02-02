@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <title>Sign Up Form</title>
+    <script src="../js/index.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -19,25 +20,25 @@
                 <h1>This is a mock sign up page</h1>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <em>Et, dolor quam?</em> Maxime assumenda vel aliquam explicabo voluptas odio nulla totam veritatis quos placeat laboriosam officiis nobis cupiditate eligendi, accusantium ducimus!</p>
             </div>
-            <form>
+            <form id="user_data" action="" method="post">
                 <legend><em>Lorem ipsum dolor sit amet</em></legend>
                 <p>Required fields: <span aria-label="required">*</span></p>
                 <fieldset>
                     <label for="user_first_name">
                         First Name<span>*</span>
-                        <input type="text" name="user_first_name" id="user_first_name" value="Thor" required>
+                        <input type="text" name="user_first_name" id="user_first_name" placeholder="Thor" required pattern="[a-z,A-Z]+" minlength="1" maxlength="30" >
                     </label>
                     <label for="user_last_name">
-                        Last Name<span></span>
-                        <input type="text" name="user_last_name" id="user_last_name" value="Odinson">
+                        Last Name
+                        <input type="text" name="user_last_name" id="user_last_name" placeholder="Odinson" pattern="[a-z,A-Z]*" minlength="1" maxlength="30">
                     </label>
                     <label for="user_email">
                         Email<span>*</span>
-                        <input type="email" name="user_email" id="user_email" required>
+                        <input type="email" name="user_email" id="user_email" placeholder="thor.odinson@rag.rk">
                     </label>
                     <label for="user_phone">
                         Telephone
-                        <input type="tel" name="user_phone" id="user_phone">
+                        <input type="tel" name="user_phone" id="user_phone" placeholder="01423594175"minlength="9" maxlength="12" pattern="[0-9]{9,12}">
                     </label>
                     <label for="password_first" class="error"> 
                         Password<span>*</span>
@@ -51,8 +52,8 @@
              </form>
              <div class="bottom">
                 <div class="button_container">
-                    <button type="submit">CREATE ACCOUNT</button>
-                    <button>LOG IN</button>
+                    <button type="submit" for="user_data">CREATE ACCOUNT</button>
+                    <button type="">LOG IN</button>
                 </div>
                 <!-- <p class="login">Already have an account?  <button>LOG IN</button></p> -->
                 <p class="photo_origin">Photo by Alex Krivec on Unsplash</p>
