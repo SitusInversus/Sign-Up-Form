@@ -1,5 +1,5 @@
 @font-face {
-    font-family: pridi;
+    font-family: 'pridi';
     src: url(../fonts/Pridi/Pridi-Regular.ttf);
     font-weight:normal;
 }
@@ -9,16 +9,16 @@
     src: url(../fonts/cakecafe/Cakecafe.ttf);
 }
 
-* {
+*, ::before, ::after {
     box-sizing: border-box;
 }
 :root {
     font-size: 1.0rem;
-    font-family: Verdana, Tahoma, sans-serif, system-ui;
 }
 body {
     background-color: pink;
     margin: auto;
+    position: relative;
 }
 
 .container {
@@ -35,16 +35,22 @@ body {
 
     width: max(25vw, 60rem);
     min-height: 100vh;
+    
 }
 
 .hero_left {
     display: flex;
     font-size: 2rem;
-    font-family: cakeCafe, pridi;
+    font-family: 'pridi', Verdana, Geneva, Tahoma, sans-serif;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: max (20vh, 5rem);
+    height: max(20vh, 5rem);
     background-color: rgba(24, 37, 118, 0.218);
+}
+
+.hero_left > h2 {
+    padding-left: 3rem;
 }
 
 #odin_logo {
@@ -54,6 +60,7 @@ body {
 }
 
 .right_side {
+    font-family: Verdana, Tahoma, sans-serif, system-ui;
     min-width: 60vw;
     display:flex;
     flex-direction: column;
@@ -67,7 +74,6 @@ body {
 }
 
 .top, .bottom {
-    /* background-color: rgba(239, 239, 239, 0); */
     flex-grow: 2;
     flex-direction: column;
     justify-content: flex-end;
@@ -195,7 +201,43 @@ input:user-invalid {
     margin-top: auto;
     align-self: flex-end;
     justify-self: flex-end;
-    padding-right: 2rem ;
+    margin-right: 2rem;
     color: azure;
+    background-color: rgba(0, 0, 0, 0.481);
+    border-radius: 4px;
+    padding: 1px;
 }
 
+footer {
+    bottom: 0;
+    left: 30%;
+    gap: 10px;
+    padding: 30px 10px;
+    font-size: 2rem;
+    position: absolute;
+}
+@keyframes rainbow {
+    0% {background-position: 0% 0%;}
+    50% {background-position: 50% 50%;}
+    100 {background-position: 100% 100%;}
+}
+
+FOOTER *{
+    text-decoration: none;
+    background-image: repeating-linear-gradient(45deg,blue, white, white, purple);
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 5s ease infinite;
+    background-size: 800% 800%;    
+}
+
+.fa-github {
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out;
+    color: white;
+}
+
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
